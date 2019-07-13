@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="text-center" > 
+     <h1>{{table.name}}</h1> 
+    </ion-title>
+  </ion-toolbar> &nbsp;
+  <ion-row>
+      <ion-col size="6" >
+
+  <ion-button size="large" color="success" (click)="showmenu()"> รายการของคุณ </ion-button>
+</ion-col>
+  <ion-col size="6" class ="ion-text-end" >
+
+  <ion-button  size="large" color="success" (click)="presentModal()" > เพิ่มอาหาร </ion-button>
+  
+  </ion-col>
+ 
+  </ion-row>
+
+</ion-header>
+<ion-content align ="center">
+    <ion-row>
+        <ion-col size="3" *ngFor="let item of food" >
+          <ion-card>
+          <p>
+        <!-- <ion-thumbnail > -->
+            <ion-img item-start  src="https://firebasestorage.googleapis.com/v0/b/foodyummy-f8d93.appspot.com/o/Imgfood%2F{{item.foodimg}}?alt=media&token=81e0498d-69e7-4548-89b4-1c9401ca721f">></ion-img>          
+        <!-- </ion-thumbnail> -->
+        &nbsp; {{ item.foodname }} <br />
+        &nbsp;   ราคา &nbsp; {{ item.foodprice }} &nbsp; บาท
+       
+      </p>
+      <ion-button size="small" color="primary" (click)="onClick(item)"> เพิ่ม </ion-button>    
+    </ion-card>
+    </ion-col>
+    </ion-row> 
+
+
+</ion-content>

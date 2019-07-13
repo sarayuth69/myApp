@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>รายการของคุณ</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+ 
+    <ion-col size="4" *ngFor="let items of item" >
+
+   
+  <ion-item  >
+    <ion-label>
+      ชื่ออาหาร : {{items.foodname}}
+    </ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>
+      จำนวน : {{ items.amount}}
+    </ion-label>
+    <ion-input></ion-input>
+    <ion-label>
+        &nbsp; รายการ
+    </ion-label>
+  </ion-item>
+  
+  <ion-item>
+
+      <ion-label>
+        ประเภท : {{items.foodtype}}
+      </ion-label>
+   
+    </ion-item>
+  <ion-item>
+    <ion-label>
+      ราคา : {{items.sum}}
+    </ion-label>
+    <ion-label>
+         &nbsp; บาท
+    </ion-label>
+   
+  </ion-item>
+  <ion-button class="btn btn-outline-danger"  type="submit" expand="block" (click) ="click(items)">
+      ลบ
+    </ion-button>
+  <ion-button class="btn btn-outline-success"  type="submit" expand="block">
+      สั่งอาหาร
+    </ion-button>
+  </ion-col>
+ 
+</ion-row>
+</ion-content>
