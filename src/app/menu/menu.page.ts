@@ -6,6 +6,7 @@ import { AlertController, ModalController } from '@ionic/angular';
 import swal from 'sweetalert';
 
 
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.page.html',
@@ -15,7 +16,6 @@ export class MenuPage implements OnInit {
   food;
   table: any;
   foodleangth: any;
-  // tslint:disable-next-line:max-line-length
   constructor(public router: Router,
               public database: AngularFireDatabase,
               private route: ActivatedRoute,
@@ -90,42 +90,9 @@ export class MenuPage implements OnInit {
           update['cart/' + this.table.name + '/' + item.foodID] = cart;
           firebase.database().ref().update(update);
           swal('สั่งอาหารสำเร็จแล้ว', 'กรุณาเช็ครายการของคุณ', 'success');
-        
+
         }
       }
     });
-
-    // const  cart = {
-    //   foodID: item.foodID,
-    //   foodname: item.foodname,
-    //   foodprice: item.foodprice,
-    //   foodtype: item.foodtype,
-    //   amount: 1,
-    //   day: 0,
-    //   status: 1,
-    //   sum: 0,
-    //   placeID: 1
-    // };
-    // const update = {};
-    // update['cart/'  + this.table.name] = cart;
-    // firebase.database().ref().update(update);
-    // swal('สั่งอาหารสำเร็จแล้ว', 'กรุณาเช็ครายการของคุณ', 'success');
-
   }
-
-
-  // click(item) {
-  //   const  updatemenu = {
-  //       foodID: item.foodID,
-  //       foodname: item.foodname,
-  //       foodprice: item.foodprice,
-  //       foodtype: item.foodtype,
-
-  //     };
-  //     const update = {};
-  //     update['tablemenu/' + this.foodleangth ] = updatemenu;
-  //     firebase.database().ref().update(update);
-  //     swal('สั่งอาหารสำเร็จแล้ว', 'กรุณาเช็ครายการของคุณ', 'success');
-  // }
-
 }

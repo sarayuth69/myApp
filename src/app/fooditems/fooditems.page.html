@@ -5,7 +5,50 @@
 </ion-header>
 
 <ion-content>
-  <ion-row>
+
+
+  <table class="table" >
+    <thead>
+      <tr>
+        <th scope="col">ลำดับ</th>
+        <th scope="col">ชื่ออาหาร</th>
+        <th scope="col">ประเภท</th>
+        <th scope="col">จำนวน</th>
+        <th scope="col">ราคา</th>
+        <th scope="col">...</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let items of item ; let i = index">
+      <tr>
+        <th scope="row">{{i+1}}</th>
+        <td>{{items.foodname}}</td>
+        <td>{{items.foodtype}}</td>
+        <td>{{ items.amount}}</td>
+        <td>{{items.sum}}</td>
+        
+        <td><button type="button" class="btn btn-danger"  (click) ="click(items)">ลบ</button>
+      
+        </td>
+      </tr>
+      
+    </tbody>
+    <button type="button" class="btn btn-outline-warning" (click)="total()">Warning</button>
+  </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <ion-row>
  
     <ion-col size="4" *ngFor="let items of item" >
 
@@ -49,5 +92,5 @@
     </ion-button>
   </ion-col>
  
-</ion-row>
+</ion-row> -->
 </ion-content>
